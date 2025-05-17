@@ -201,3 +201,11 @@ def display_projections_as_columns():
 # PART V: SIMULATE INCREASES IN FISSION-EVENT FREQUENCY
 
 def model_increase_in_fission_frequency():
+    # Section 6 - Input
+    print("PART V: SIMULATE INCREASES IN FISSION-EVENT FREQUENCY")
+    initial_population = int(input("Enter the initial population: "))
+    growth_rate = float(input("Enter the growth rate (enter 100% as 100): "))
+    growth_unit = input("Enter the growth rate time unit (e.g., day): ")
+    projection_time = int(input("Enter the amount of time to project for (e.g., 1): "))
+    projection_unit = input("Enter the projection time unit (e.g., day): ")
+   
