@@ -198,3 +198,4 @@ def display_projections_as_columns():
     for row in zip(opening_population, num_of_new_bacteria, closing_population):
         print(row)
 
+# PART V: SIMULATE INCREASES IN FISSION-EVENT FREQUENCY
