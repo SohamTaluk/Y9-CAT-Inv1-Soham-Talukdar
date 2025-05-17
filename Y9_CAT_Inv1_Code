@@ -1,1 +1,7 @@
 # Year 9 Mathematics Investigation: Computational Algorithms for Modeling Population Growth
+
+# -------------------------------------------
+# 1.2 Create and explain a reusable means of converting time periods
+# -------------------------------------------
+# This section implements a reusable way to convert between time periods using a lookup table (dictionary of dictionaries).
+# This table allows conversion between days, half-days, quarter-days, hours, minutes, and seconds.
