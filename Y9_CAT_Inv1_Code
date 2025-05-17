@@ -141,3 +141,21 @@ def compare_sophisticated_models():
     # Projection Timeframe Input
     projection_time = int(input("Enter the amount of time to project into the future: "))
     projection_unit = input("Enter the projection time unit (day, half-day, quarter-day, hour, minute): ")
+
+    # Calculate and Output Projections
+    steps1 = convert_time_units(projection_time, projection_unit, fission_unit1)
+    steps2 = convert_time_units(projection_time, projection_unit, fission_unit2)
+    sub_growth_rate1 = growth_rate1 / fission_events1
+    sub_growth_rate2 = growth_rate2 / fission_events2
+    pop1 = initial_population1
+    pop2 = initial_population2
+    projection1 = [pop1]
+    projection2 = [pop2]
+    for _ in range(int(steps1)):
+        pop1 *= (1 + sub_growth_rate1 / 100)
+        projection1.append(pop1)
+    for _ in range(int(steps2)):
+        pop2 *= (1 + sub_growth_rate2 / 100)
+        projection2.append(pop2)
+    print("First model projection:", [round(p, 2) for p in projection1])
+    print("Second model projection:", [round(p, 2) for p in projection2])
