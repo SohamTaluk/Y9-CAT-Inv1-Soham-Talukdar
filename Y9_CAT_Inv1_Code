@@ -137,3 +137,7 @@ def compare_sophisticated_models():
         fission_events2 = int(input("Enter the number of fission events per growth rate time unit: "))
     else:
         fission_events2 = time_conversion[growth_unit2][fission_unit2]
+
+    # Projection Timeframe Input
+    projection_time = int(input("Enter the amount of time to project into the future: "))
+    projection_unit = input("Enter the projection time unit (day, half-day, quarter-day, hour, minute): ")
