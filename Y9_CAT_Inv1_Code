@@ -113,3 +113,5 @@ def calculate_time_to_target():
     print("Forward projection:", [round(p, 2) for p in projection])
     print(f"Time taken: {events} {fission_unit if fission_unit != 'custom' else f'{fission_events} per {growth_unit}'}")
 
+# PART III: COMPARE SOPHISTICATED MODELS
+
