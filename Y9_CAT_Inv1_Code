@@ -3,3 +3,7 @@
 # This program models bacterial population growth using various computational algorithms.
 # Each section corresponds to a specific part of the investigation as described in the assignment.
 
+# -------------------------------------------
+# PART 1: TIME PERIOD CONVERSION UTILITIES
+# -------------------------------------------
+# This section defines a reusable way to convert between different time units using a lookup table.
