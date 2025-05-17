@@ -16,3 +16,22 @@ time_conversion = {
     'hour': {'minute': 60, 'second': 3600},
     'minute': {'second': 60}
 }
+
+def convert_time_units(amount, from_unit, to_unit):
+    """
+    Converts an amount from one time unit to another using the lookup table.
+    """
+    units = ['day', 'half-day', 'quarter-day', 'hour', 'minute', 'second']
+    from_index = units.index(from_unit)
+    to_index = units.index(to_unit)
+    factor = 1
+    if from_index < to_index:
+        # Convert down (e.g., days to hours)
+        for i in range(from_index, to_index):
+            factor *= list(time_conversion[units[i]].values())[0]
+    elif from_index > to_index:
+        # Convert up (e.g., minutes to hours)
+        for i in range(to_index, from_index):
+            factor /= list(time_conversion[units[i]].values())[0]
+    return amount * factor
+
