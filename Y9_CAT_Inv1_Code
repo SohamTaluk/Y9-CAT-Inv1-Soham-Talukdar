@@ -224,3 +224,35 @@ def model_increase_in_fission_frequency():
         for _ in range(int(steps)):
             pop *= (1 + sub_growth_rate / 100)
         print(f"Fission events per {growth_unit}: {freq}, Final population: {round(pop, 2)}")
+
+
+# PART VI: CREATE A USER INTERFACE
+
+
+def show_main_menu():
+    # PART: VI (Section 7) - Main Menu
+    while True:
+        print("\nThis program has five modules. Choose a module by typing its number")
+        print("(1) Compare a naive and sophisticated model")
+        print("(2) Time for a sophisticated model to reach the target population")
+        print("(3) Compare two sophisticated population models")
+        print("(4) Generate detailed projections formatted as columns")
+        print("(5) Model increases in fission-event frequency")
+        print("Enter 1 to 5, or 6 to quit:")
+        choice = input()
+        if choice == '1':
+            compare_naive_with_sophisticated()
+        elif choice == '2':
+            calculate_time_to_target()
+        elif choice == '3':
+            compare_sophisticated_models()
+        elif choice == '4':
+            display_projections_as_columns()
+        elif choice == '5':
+            model_increase_in_fission_frequency()
+        elif choice == '6':
+            print("Goodbye!")
+            break
+        else:
+            print("Invalid choice. Please enter a number from 1 to 6.")
+
