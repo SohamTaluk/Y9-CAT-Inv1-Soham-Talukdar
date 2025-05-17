@@ -208,4 +208,19 @@ def model_increase_in_fission_frequency():
     growth_unit = input("Enter the growth rate time unit (e.g., day): ")
     projection_time = int(input("Enter the amount of time to project for (e.g., 1): "))
     projection_unit = input("Enter the projection time unit (e.g., day): ")
-   
+   # PART: V (Section 6) - Input
+    print("PART V: SIMULATE INCREASES IN FISSION-EVENT FREQUENCY")
+    initial_population = int(input("Enter the initial population: "))
+    growth_rate = float(input("Enter the growth rate (enter 100% as 100): "))
+    growth_unit = input("Enter the growth rate time unit (e.g., day): ")
+    projection_time = int(input("Enter the amount of time to project for (e.g., 1): "))
+    projection_unit = input("Enter the projection time unit (e.g., day): ")
+    # Frequencies: quarter-day, 2-hour, hour, minute, second
+    frequencies = [4, 12, 24, 1440, 86400]
+    for freq in frequencies:
+        steps = freq * projection_time
+        sub_growth_rate = growth_rate / freq
+        pop = initial_population
+        for _ in range(int(steps)):
+            pop *= (1 + sub_growth_rate / 100)
+        print(f"Fission events per {growth_unit}: {freq}, Final population: {round(pop, 2)}")
