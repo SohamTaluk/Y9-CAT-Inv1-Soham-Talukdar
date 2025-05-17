@@ -127,3 +127,13 @@ def compare_sophisticated_models():
     else:
         fission_events1 = time_conversion[growth_unit1][fission_unit1]
 
+    # Input for Second Model
+    print("Second model:")
+    initial_population2 = int(input("Enter the initial population: "))
+    growth_rate2 = float(input("Enter the growth rate (enter 7% as 7): "))
+    growth_unit2 = input("Enter the growth rate time unit (day, half-day, quarter-day, hour, minute): ")
+    fission_unit2 = input("Enter the fission-event frequency time unit (day, half-day, quarter-day, hour, minute, custom): ")
+    if fission_unit2 == "custom":
+        fission_events2 = int(input("Enter the number of fission events per growth rate time unit: "))
+    else:
+        fission_events2 = time_conversion[growth_unit2][fission_unit2]
