@@ -96,3 +96,7 @@ def calculate_time_to_target():
     else:
         fission_events = time_conversion[growth_unit][fission_unit]
     target_population = float(input("Enter the target amount: "))
+
+     # 3.1: Summarise input
+    print(f"Sophisticated model: I = {initial_population}, g = {growth_rate}% per {growth_unit}, Fission-event frequency: {fission_events}")
+    print(f"Target amount: {target_population}")
