@@ -199,3 +199,5 @@ def display_projections_as_columns():
         print(row)
 
 # PART V: SIMULATE INCREASES IN FISSION-EVENT FREQUENCY
+
+def model_increase_in_fission_frequency():
