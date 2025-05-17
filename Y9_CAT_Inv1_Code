@@ -163,3 +163,38 @@ def compare_sophisticated_models():
 
 # PART IV: GENERATE MORE DETAILED PROJECTIONS
 
+def display_projections_as_columns():
+    # Input
+    print("MODULE 5: Keeping track of the of population increase at each fission event")
+    initial_population = int(input("Enter the initial population: "))
+    growth_rate = float(input("Enter the growth rate (enter 7% as 7): "))
+    growth_unit = input("Enter the growth rate time unit (day, half-day, quarter-day, hour, minute): ")
+    fission_unit = input("Enter the fission-event frequency time unit (day, half-day, quarter-day, hour, minute, custom): ")
+    if fission_unit == "custom":
+        fission_events = int(input("Enter the number of fission events per growth rate time unit: "))
+    else:
+        fission_events = time_conversion[growth_unit][fission_unit]
+    population_target = int(input("Enter the population size to project to (enter 0, to specify the amount of time to project for): "))
+    if population_target == 0:
+        projection_time = int(input("In that case, enter the amount of time to project for: "))
+        projection_unit = input("Enter the projection time unit (day, half-day, quarter-day, hour, minute, custom): ")
+        steps = convert_time_units(projection_time, projection_unit, fission_unit)
+    else:
+        steps = float('inf')
+    sub_growth_rate = growth_rate / fission_events
+    opening_population = []
+    num_of_new_bacteria = []
+    closing_population = []
+    pop = initial_population
+    count = 0
+    while (population_target == 0 and count < steps) or (population_target > 0 and pop < population_target):
+        opening_population.append(round(pop, 2))
+        added = pop * sub_growth_rate / 100
+        num_of_new_bacteria.append(round(added, 2))
+        pop += added
+        closing_population.append(round(pop, 2))
+        count += 1
+    print('column headings: opening, number added, closing')
+    for row in zip(opening_population, num_of_new_bacteria, closing_population):
+        print(row)
+
