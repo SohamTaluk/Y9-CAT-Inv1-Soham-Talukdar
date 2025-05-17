@@ -115,3 +115,15 @@ def calculate_time_to_target():
 
 # PART III: COMPARE SOPHISTICATED MODELS
 
+def compare_sophisticated_models():
+     # Input for First Model
+    print("First model:")
+    initial_population1 = int(input("Enter the initial population: "))
+    growth_rate1 = float(input("Enter the growth rate (enter 7% as 7): "))
+    growth_unit1 = input("Enter the growth rate time unit (day, half-day, quarter-day, hour, minute): ")
+    fission_unit1 = input("Enter the fission-event frequency time unit (day, half-day, quarter-day, hour, minute, custom): ")
+    if fission_unit1 == "custom":
+        fission_events1 = int(input("Enter the number of fission events per growth rate time unit: "))
+    else:
+        fission_events1 = time_conversion[growth_unit1][fission_unit1]
+
