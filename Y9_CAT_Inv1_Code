@@ -28,3 +28,11 @@ def convert_time_units(amount, from_unit, to_unit):
         for i in range(to_index, from_index):
             factor /= list(time_conversion[units[i]].values())[0]
     return amount * factor
+
+
+# PART I: NAIVE VS SOPHISTICATED MODEL COMPARISON
+    # 2.1 Prompt as specified and summarise the entered information
+    # 2.1.1 Accept a custom fission-event frequency
+    # 2.2 Output the correct projected population size and explain your design
+
+
