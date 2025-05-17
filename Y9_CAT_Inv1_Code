@@ -31,8 +31,12 @@ def convert_time_units(amount, from_unit, to_unit):
 
 
 # PART I: NAIVE VS SOPHISTICATED MODEL COMPARISON
-    # 2.1 Prompt as specified and summarise the entered information
-    # 2.1.1 Accept a custom fission-event frequency
-    # 2.2 Output the correct projected population size and explain your design
 
+def compare_naive_with_sophisticated():
+
+    # 2.1: Prompt for naive model
+    print("Naive population model:")
+    initial_population = int(input("Enter the initial population: "))
+    growth_rate = float(input("Enter the growth rate (enter 7% as 7): "))
+    growth_unit = input("Enter the growth rate time unit (day, half-day, quarter-day, hour, minute): ")
 
