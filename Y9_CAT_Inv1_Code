@@ -59,3 +59,15 @@ def compare_naive_with_sophisticated():
     else:
         print(f"Sophisticated Model: I = {initial_population_s}, g = {growth_rate_s}% per {growth_unit_s}, Fission-event frequency: {fission_unit}")
     print(f"Projection timeframe: {projection_time} {projection_unit}")
+
+ # 2.2: Calculate sophisticated model
+    if fission_unit == "custom":
+        sub_periods = fission_events * periods
+        sub_growth_rate = growth_rate_s / fission_events
+    else:
+        sub_periods = convert_time_units(projection_time, projection_unit, fission_unit)
+        sub_growth_rate = growth_rate_s / time_conversion[growth_unit_s][fission_unit]
+    sophisticated_population = initial_population_s
+    for _ in range(int(sub_periods)):
+        sophisticated_population *= (1 + sub_growth_rate / 100)
+
