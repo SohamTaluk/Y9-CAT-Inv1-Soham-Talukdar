@@ -100,3 +100,16 @@ def calculate_time_to_target():
      # 3.1: Summarise input
     print(f"Sophisticated model: I = {initial_population}, g = {growth_rate}% per {growth_unit}, Fission-event frequency: {fission_events}")
     print(f"Target amount: {target_population}")
+
+    # 3.2: Calculate projection and time taken
+    sub_growth_rate = growth_rate / fission_events
+    population = initial_population
+    projection = [population]
+    events = 0
+    while population < target_population:
+        population *= (1 + sub_growth_rate / 100)
+        projection.append(population)
+        events += 1
+    print("Forward projection:", [round(p, 2) for p in projection])
+    print(f"Time taken: {events} {fission_unit if fission_unit != 'custom' else f'{fission_events} per {growth_unit}'}")
+
