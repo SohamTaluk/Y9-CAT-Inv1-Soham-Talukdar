@@ -159,3 +159,7 @@ def compare_sophisticated_models():
         projection2.append(pop2)
     print("First model projection:", [round(p, 2) for p in projection1])
     print("Second model projection:", [round(p, 2) for p in projection2])
+
+
+# PART IV: GENERATE MORE DETAILED PROJECTIONS
+
